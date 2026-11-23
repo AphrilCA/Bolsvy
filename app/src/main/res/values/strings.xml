@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Bolsvy</string>
+    <string name="lema">Bolsas pintadas y bordadas a mano</string>
+    <string name="btn_ver_catalogo">Ver catálogo</string>
+    <string name="btn_personalizar">Personalizar bolsa</string>
+    <string name="titulo_catalogo">Catálogo</string>
+    <string name="precio">$%1$d</string>
+    <string name="desc_logo">Logo Bolsvy</string>
+    <string name="desc_avanzar">Avanzar</string>
+    <string name="desc_regresar">Regresar</string>
+    //arego más
+    <string name="buscar_bolsa">Buscar bolsa…</string>
+    <string name="filtro_todos">Todos</string>
+    <string name="filtro_40">40x40</string>
+    <string name="filtro_20">20x20</string>
+    <string name="sin_resultados">No encontramos bolsas con esa búsqueda</string>
+    //más
+    <string name="nav_inicio">Inicio</string>
+    <string name="nav_catalogo">Catálogo</string>
+    <string name="nav_favoritos">Favoritos</string>
+    <string name="nav_contacto">Contacto</string>
+    <string name="titulo_favoritos">Favoritos</string>
+    <string name="titulo_contacto">Contacto</string>
+    // para el corazón
+    <string name="desc_favorito_agregar">Agregar a favoritos</string>
+    <string name="desc_favorito_quitar">Quitar de favoritos</string>
+    <string name="favoritos_vacio">Aún no tienes bolsas favoritas</string>
+    //nombres de las bolsas
+    <string name="bolsa_snoopy_flores">Bolsa Snoopy flores</string>
+    <string name="bolsa_conejo">Bolsa conejo</string>
+    <string name="bolsa_snoopy">Bolsa Snoopy</string>
+    <string name="bolsa_floreada">Bolsa floreada</string>
+</resources>
