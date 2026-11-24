@@ -36,9 +36,11 @@ fun TarjetaBolsa(
     bolsa: Bolsa,
     esFavorito: Boolean,
     onToggleFavorito: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onClick: () -> Unit = {}
 ) {
     Card(
+        onClick = onClick,
         modifier = modifier,
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.surface

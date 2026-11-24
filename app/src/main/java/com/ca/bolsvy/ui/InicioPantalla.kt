@@ -71,7 +71,7 @@ fun InicioPantalla(navController: NavController) {
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            // Ver catálogo
+            // Botón: Ver catálogo
             Button(
                 onClick = { navController.navigate(AppScreens.Catalogo.route) },
                 modifier = Modifier.fillMaxWidth(),
@@ -93,7 +93,7 @@ fun InicioPantalla(navController: NavController) {
 
             // Botón: Personalizar bolsa
             Button(
-                onClick = { /* pendiente: pantalla de Personalización */ },
+                onClick = { navController.navigate(AppScreens.Personalizacion.route) },
                 modifier = Modifier.fillMaxWidth(),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = MaterialTheme.colorScheme.tertiary,

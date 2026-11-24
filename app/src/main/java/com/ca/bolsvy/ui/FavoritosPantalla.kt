@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.ca.bolsvy.R
+import com.ca.bolsvy.data.AppScreens
 import com.ca.bolsvy.data.Bolsa
 import com.ca.bolsvy.ui.theme.BolsvyTheme
 
@@ -75,7 +76,10 @@ fun FavoritosPantalla(
                     TarjetaBolsa(
                         bolsa = bolsa,
                         esFavorito = true,
-                        onToggleFavorito = { onToggleFavorito(bolsa.id) }
+                        onToggleFavorito = { onToggleFavorito(bolsa.id) },
+                        onClick = {
+                            navController.navigate(AppScreens.Producto.crearRuta(bolsa.id))
+                        }
                     )
                 }
             }

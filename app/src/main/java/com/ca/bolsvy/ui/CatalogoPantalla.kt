@@ -31,7 +31,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -39,6 +39,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.ca.bolsvy.R
+import com.ca.bolsvy.data.AppScreens
 import com.ca.bolsvy.data.Bolsa
 import com.ca.bolsvy.ui.theme.BolsvyTheme
 
@@ -53,15 +54,16 @@ fun CatalogoPantalla(
 
     var busqueda by remember { mutableStateOf("") }
     var medidaSeleccionada by remember { mutableStateOf<String?>(null) }
-    val context = LocalContext.current
+    val resources = LocalResources.current
 
     val filtros = listOf<Pair<Int, String?>>(
         R.string.filtro_todos to null,
         R.string.filtro_40 to "40x40",
         R.string.filtro_20 to "20x20"
     )
+
     val bolsasFiltradas = bolsas.filter { bolsa ->
-        stringResource(bolsa.nombre).contains(busqueda, ignoreCase = true) &&
+        resources.getString(bolsa.nombre).contains(busqueda, ignoreCase = true) &&
                 (medidaSeleccionada == null || bolsa.medida == medidaSeleccionada)
     }
 
@@ -151,7 +153,10 @@ fun CatalogoPantalla(
                         TarjetaBolsa(
                             bolsa = bolsa,
                             esFavorito = bolsa.id in favoritos,
-                            onToggleFavorito = { onToggleFavorito(bolsa.id) }
+                            onToggleFavorito = { onToggleFavorito(bolsa.id) },
+                            onClick = {
+                                navController.navigate(AppScreens.Producto.crearRuta(bolsa.id))
+                            }
                         )
                     }
                 }
@@ -159,6 +164,7 @@ fun CatalogoPantalla(
         }
     }
 }
+
 @Preview(showBackground = true)
 @Composable
 fun CatalogoPantallaPreview() {

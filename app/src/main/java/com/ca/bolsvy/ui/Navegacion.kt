@@ -10,10 +10,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.ca.bolsvy.data.AppScreens
 import com.ca.bolsvy.data.BolsvyDatabase
 import com.ca.bolsvy.data.FavoritoEntity
@@ -30,11 +32,8 @@ fun AppNavegacion() {
     val dao = remember { BolsvyDatabase.obtener(context).bolsaDao() }
     val scope = rememberCoroutineScope()
 
-    // Datos que vienen de la base de datos
     val bolsas by dao.obtenerBolsas().collectAsState(initial = emptyList())
     val favoritos by dao.obtenerIdsFavoritos().collectAsState(initial = emptyList())
-
-    // Convierte las entidades a Bolsa (la clase que usan las pantallas)
     val listaBolsas = remember(bolsas) { bolsas.map { it.aBolsa(context) } }
 
     val alternarFavorito: (Int) -> Unit = { id ->
@@ -76,6 +75,22 @@ fun AppNavegacion() {
             }
             composable(route = AppScreens.Contacto.route) {
                 ContactoPantalla(navController)
+            }
+            composable(route = AppScreens.Personalizacion.route) {
+                PersonalizacionPantalla(navController)
+            }
+            composable(
+                route = AppScreens.Producto.route,
+                arguments = listOf(navArgument("id") { type = NavType.IntType })
+            ) { entrada ->
+                val id = entrada.arguments?.getInt("id")
+                val bolsa = listaBolsas.find { it.id == id }
+                ProductoPantalla(
+                    navController = navController,
+                    bolsa = bolsa,
+                    esFavorito = id != null && id in favoritos,
+                    onToggleFavorito = alternarFavorito
+                )
             }
         }
     }

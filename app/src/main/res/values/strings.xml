@@ -30,4 +30,41 @@
     <string name="bolsa_conejo">Bolsa conejo</string>
     <string name="bolsa_snoopy">Bolsa Snoopy</string>
     <string name="bolsa_floreada">Bolsa floreada</string>
+    //agrego más
+    <!-- Producto -->
+    <string name="prod_descripcion">Bolsa de lona de algodón pintada a mano, ligera, resistente y bonita. Ideal para uso diario.</string>
+    <string name="prod_material">Material: Tela de algodón</string>
+    <string name="prod_medidas">Medidas: %1$s cm</string>
+    <string name="btn_solicitar_info">Solicitar información</string>
+    <string name="btn_agregar_favoritos">Agregar a favoritos</string>
+    <string name="btn_quitar_favoritos">Quitar de favoritos</string>
+    <string name="prod_no_encontrada">No se encontró la bolsa</string>
+
+    <!-- Personalización -->
+    <string name="pers_titulo">Personaliza tu bolsa</string>
+    <string name="pers_subtitulo">Cuéntanos cómo la quieres y haremos realidad tu idea</string>
+    <string name="pers_tipo">Tipo de bolsa</string>
+    <string name="pers_color">Color principal</string>
+    <string name="pers_diseno">Diseño o temática</string>
+    <string name="pers_diseno_hint">Ej. Snoopy con flores amarillas</string>
+    <string name="pers_detalles">Detalles adicionales</string>
+    <string name="pers_detalles_hint">Tamaño, tipo de tela, con cierre</string>
+    <string name="btn_enviar_solicitud">Enviar solicitud</string>
+    <string name="btn_volver_catalogo">Volver al catálogo</string>
+    <string name="pers_compartir">Enviar solicitud por</string>
+    <string name="pers_mensaje">Hola, quiero una bolsa personalizada.\nTipo: %1$s\nColor: %2$s\nDiseño: %3$s\nDetalles: %4$s</string>
+    <string name="tipo_tote">Tote</string>
+    <string name="tipo_cosmetiquera">Cosmetiquera</string>
+    <string name="tipo_mochila">Mochila</string>
+    <string name="color_lila">Lila</string>
+    <string name="color_azul">Azul</string>
+    <string name="color_rosa">Rosa</string>
+    <string name="color_cafe">Café</string>
+
+    <!-- Contacto -->
+    <string name="cont_pregunta">¿Tienes alguna duda?</string>
+    <string name="cont_texto">Estamos aquí para ayudarte, puedes escribirnos por cualquiera de nuestros medios</string>
+    <string name="cont_whatsapp">WhatsApp</string>
+    <string name="cont_instagram">Instagram</string>
+    <string name="cont_facebook">Facebook</string>
 </resources>
